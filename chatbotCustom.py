@@ -341,7 +341,7 @@ def create_context(
 def answer_question(
     df,
     model="text-davinci-003",
-    question="Am I allowed to publish model outputs to Twitter, without a human review?",
+    question="",
     max_len=1800,
     size="ada",
     debug=False,
