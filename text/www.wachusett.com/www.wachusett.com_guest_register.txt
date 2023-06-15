@@ -1,0 +1,4 @@
+
+Guest Register
+Please provide some basic information before proceeding with checkout.
+All fields are required.
