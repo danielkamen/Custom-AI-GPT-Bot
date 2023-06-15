@@ -44,7 +44,7 @@ openai.api_key = openAPIKeyHere
 File Structure
 -------
 
-![Alt text](https://github.com/danielkamen/Custom-AI-GPT-Bot/blob/main/fileStructure.PNG)
+![Alt text](https://github.com/danielkamen/Custom-AI-GPT-Bot/blob/main/scrapCode/fileStructure.PNG)
 
 ### If you wish to maintain a different file structure, go to chatbotCustom.py. Search for instances of:
 ``` 
