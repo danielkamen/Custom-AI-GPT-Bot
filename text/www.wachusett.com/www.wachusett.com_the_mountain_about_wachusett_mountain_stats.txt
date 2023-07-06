@@ -1,9 +1,1 @@
-
-Mountain Stats
-Summit Elevation: 2006 ft
-Vertical Drop: 1000 ft
-Trails: 27
-Lifts: 8
-Uphill Capacity: 9200 skiers per hour
-Snowmaking: 100%
-Grooming: 2x per day
+Mountain StatsSummit Elevation: 2006 ftVertical Drop: 1000 ftTrails: 27Lifts: 8Uphill Capacity: 9200 skiers per hourSnowmaking: 100%Grooming: 2x per day

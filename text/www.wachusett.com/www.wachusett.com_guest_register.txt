@@ -1,4 +1,1 @@
-
-Guest Register
-Please provide some basic information before proceeding with checkout.
-All fields are required.
+Guest RegisterPlease provide some basic information before proceeding with checkout.All fields are required.First Name *Last Name *Email *Confirm Email *Captcha VerificationPreviousNext

@@ -12,14 +12,23 @@ import tiktoken
 import openai
 import numpy as np
 from openai.embeddings_utils import distances_from_embeddings, cosine_similarity
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 # Regex pattern to match a URL
 HTTP_URL_PATTERN = r'^http[s]{0,1}://.+$'
 
 # Define root domain to crawl
-domain = "www.wachusett.com"
-full_url = "https://www.wachusett.com/"
-openai.api_key = "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"
+domain = ""
+full_url = ""
+openai.api_key = ""
 
 # Create a class to parse the HTML and get the hyperlinks
 class HyperlinkParser(HTMLParser):
@@ -132,6 +141,8 @@ def extract_text(element, depth=0):
     return text.strip(separator)
 
 # Will scrape the entire page if given the core link, else, look at the main section only
+
+"""
 def get_html_content(url):
     try:
         html = urlopen(url)
@@ -140,8 +151,34 @@ def get_html_content(url):
         return main_content
     except urllib.error.HTTPError:
         return None
+""" 
     
-    
+def get_html_content(url):
+    try:
+        # Setup Selenium WebDriver
+        chrome_options = Options()
+        chrome_options.add_argument("--headless") # Ensure GUI is off
+        chrome_options.add_argument("--no-sandbox")
+        chrome_options.add_argument("--disable-dev-shm-usage")
+        
+        # Choose Chrome Browser
+        webdriver_service = Service(ChromeDriverManager().install())
+        driver = webdriver.Chrome(service=webdriver_service, options=chrome_options)
+        wait = WebDriverWait(driver, 10)
+        
+        driver.get(url) # Navigate to the webpage
+
+        # Once the page is loaded, get the HTML content
+        html = driver.page_source
+        
+        bs = BeautifulSoup(html, 'html.parser')
+        main_content = bs.find('main')  # Find the <main> tag
+        return main_content
+    except Exception as e:
+        print(e)
+        return None
+    finally:
+        driver.quit() # Ensure the driver quits after use
 
 def crawl(url):
     # Parse the URL and get the domain
@@ -201,7 +238,14 @@ def crawl(url):
                 queue.append(link)
                 seen.add(link)
 
+################################################################################
+##### Comment this out once you have gotten your data.
 #crawl(full_url)
+################################################################################
+
+
+
+
 
 ################################################################################
 ### Step 5
@@ -449,4 +493,4 @@ print(answer_question(df, question="What are the availble season pass tickets?",
 
 print(answer_question(df, question="What do youi offer for ticket prices?"))
 
-print(answer_question(df, question="What is our newest embeddings model?"))
+print(answer_question(df, question="give me wachuseet mountain marketing content"))

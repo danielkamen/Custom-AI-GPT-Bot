@@ -5,7 +5,8 @@
 Builds a chatbot built off openAI api, trained on website data that was scrapped from all subpages. The text files are then converted into CSV files, and the information is embedded to associate tokens with expected next words. Make sure you have a working and paid API account with OpenAI before starting any of this. 
 </p>
 
-
+## This is a local version
+Calling print(answer_question...) gives an output to the terminal locally. Ideally, the files produced should be stored in a vector database. This gives the quickest and cheapest calls to the website data, which is passed to OpenAi api. 
 
 
 This project was built off the OpenAI WebQA Tutorial. https://platform.openai.com/docs/tutorials/web-qa-embeddings Below are the steps I personally took to make my bot.
@@ -19,13 +20,13 @@ source env/bin/activate
 
 pip install -r requirements.txt
 ```
-### What to add to the chatbotCustom.py
-1. Navigate to:
+# What to add to the chatbotCustom.py
+1. Navigate to var named "domain":
 ```
 domain = "www.websitename.com"
 ```
 2. Switch out websitename with the main page of the site you wish to scrape.
-3. Below that is:
+3. Below that is var named "full_url":
 ```
 full_url = "https://www.websitename.com/"
 ```
@@ -39,7 +40,9 @@ openai.api_key = openAPIKeyHere
 ``` 
 #crawl(full_url) 
 ```
-## **Once the website has been crawled once, it is very important to comment this out again to reduce runtime**
+# **Once the website has been crawled once, it is very important to comment out steps 1 -> 11 to reduce runtime and waste money re-embeddeding the data**
+
+
 
 File Structure
 -------

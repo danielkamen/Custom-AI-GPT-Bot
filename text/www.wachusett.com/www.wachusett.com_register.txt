@@ -1,5 +1,1 @@
-
-Register
-Membership to this site is Public.
-Once your account information has been submitted, you will be immediately granted access to the site environment.
-All fields marked with a red asterisk are required.
+RegisterMembership to this site is Public.Once your account information has been submitted, you will be immediately granted access to the site environment.All fields marked with a red asterisk are required.First Name *Last Name *Date Of Birth *MonthMMDayDDYearYYYYEmail *Confirm Email *Password *Confirm Password *Captcha VerificationStay up-to-date with Wachusett!Choose the type and frequency of information you would like.NewlettersWachusett current events, special notices, promotions and offers Daily Snow ReportReceive an email with the current conditions, lift/trail information, and other news Weekly Snow ReportWe'll tell you trail conditions and weather with our Wachusett Mountain Snow Report. Register
