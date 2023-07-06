@@ -1,8 +1,0 @@
-domain = "www.wachusett.com"
-full_url = "https://www.wachusett.com/"
-openai.api_key = "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"
-
-
-specific prompt building @ line 368 of chatbotCustom.py
-You are salesman at Wachusett Mountain, a ski resort. You want to help the customer as much as possible.
-
